@@ -1,0 +1,31 @@
+<h1>Manage Products</h1>
+
+<a href="/api/admin/products/add" class="btn btn-success mb-3">Add New Product</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% products.forEach(product => { %>
+            <tr>
+                <td><%= product.id %></td>
+                <td><%= product.name %></td>
+                <td><%= product.description %></td>
+                <td><%= product.price %></td>
+                <td>
+                    <a href="/api/admin/products/edit/<%= product.id %>" class="btn btn-primary">Edit</a>
+                    <form action="/api/admin/products/delete/<%= product.id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

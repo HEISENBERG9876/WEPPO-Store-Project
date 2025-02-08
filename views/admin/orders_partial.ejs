@@ -1,0 +1,29 @@
+<h1>Manage Orders</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>User ID</th>
+            <th>Order Date</th>
+            <th>Total Price</th>
+            <th>Products</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% orders.forEach(order => { %>
+            <tr>
+                <td><%= order.order_id %></td>
+                <td><%= order.user_id %></td>
+                <td><%= new Date(order.order_date).toLocaleDateString() %></td>
+                <td>$<%= order.total_price %></td>
+                <td><%= order.product_names.join(', ') %></td>
+                <td>
+                    <form action="/api/admin/orders/delete/<%= order.order_id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

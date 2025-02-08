@@ -1,0 +1,26 @@
+<h1 class="mb-4">Manage Users</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Admin Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.is_admin ? 'Admin' : 'User' %></td>
+                <td>
+                    <a href="/api/admin/users/edit/<%= user.id %>" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="/api/admin/users/delete/<%= user.id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

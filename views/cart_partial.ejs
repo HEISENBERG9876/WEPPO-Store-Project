@@ -1,0 +1,29 @@
+<h2>Your Cart</h2>
+    <% if (cartItems.length > 0) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let totalPrice = 0; %>
+                <% cartItems.forEach(item => { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.quantity %></td>
+                        <td><%= item.price %> USD</td>
+                        <td><%= (item.price * item.quantity).toFixed(2) %> USD</td>
+                    </tr>
+                    <% totalPrice += item.price * item.quantity; %>
+                <% }); %>
+            </tbody>
+        </table>
+        <h4>Total Price: $<%= totalPrice.toFixed(2) %> USD</h4>
+        <a href="/api/orders/place" class="btn btn-primary">Place Order</a>
+    <% } else { %>
+        <p>Your cart is empty.</p>
+    <% } %>
