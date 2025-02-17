@@ -21,13 +21,13 @@ This is a simple e-commerce shop created as a final project for one of my univer
 ## Screenshots
 
 ## Home page
-![Home page](/screens/index.png)
+![Home page](/screens/index.PNG)
 
 ## Cart
-![Cart](/screens/cart.png)
+![Cart](/screens/cart.PNG)
 
 ## Admin
-![Admin](/screens/admin.png)
+![Admin](/screens/admin.PNG)
 
 
 ## How to run
