@@ -23,9 +23,9 @@ router.get('/products/add', async (req, res) => {
     res.render('admin/add_product', { user: req.user });
 });
 
+
 router.post('/products/add', async (req, res) => {
     const { name, description, price } = req.body;
-    console.log('Request Body:', req.body);
 
     try {
         await pool.query(
