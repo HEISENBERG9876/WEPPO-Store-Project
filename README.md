@@ -1,5 +1,5 @@
 # About
-This is a simple e-commerce shop created as a final project for one of my university courses. The application uses Node.js, Express and PostgreSQL. EJS is also used here to simplify building the frontend and bootstrap to handle the visuals.
+A simple e-commerce shop created as a final project for one of my university courses. The application uses Node.js, Express and PostgreSQL. EJS is also used here to simplify building the frontend and bootstrap to handle the visuals.
 
 # Features
 
