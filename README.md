@@ -36,3 +36,5 @@ This is a simple e-commerce shop created as a final project for one of my univer
 - Install dependancies with npm install
 - Run the project with node server.js in the command line (project root directory)
 - In the browser, go to http://localhost:7800/
+
+Running the project might require changing database credentials in .env file
