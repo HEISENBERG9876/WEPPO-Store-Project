@@ -10,7 +10,6 @@ router.post("/register", async (req, res) => {
 
     try {
         if (!username || !password) {
-            console.error("❌ Validation Error: Missing username or password");
             return res.status(400).json({ error: "Username and password are required" });
         }
 
@@ -35,7 +34,6 @@ router.post("/register", async (req, res) => {
 
 
 router.post("/login", async (req, res) => {
-    console.log("Request body:", req.body);
     const { username, password } = req.body;
 
     try {
