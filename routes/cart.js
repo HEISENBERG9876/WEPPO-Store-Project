@@ -12,7 +12,6 @@ router.post("/add", async (req, res) => {
     }
 
     try {
-        console.log("User id: " + req.session.user.id)
         const result = await pool.query(
             "INSERT INTO cart_items (user_id, product_id, quantity, price) VALUES ($1, $2, $3, $4) RETURNING *",
             [req.session.user.id, productId, quantity, price]
